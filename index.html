@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Anos de Amor</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+        body {
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            text-align: center;
+            color: #fff;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .contador {
+            font-size: 2em;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            display: block;
+            margin: 10px auto;
+            width: fit-content;
+            border-bottom: 2px solid #999;
+        }
+        p {
+            font-size: 1.2em;
+            margin-top: 20px;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <h1>Há 5 anos, Deus nos uniu para sempre 💖</h1>
+    
+    <div class="contador" id="anos"></div>
+    <div class="contador" id="meses"></div>
+    <div class="contador" id="semanas"></div>
+    <div class="contador" id="dias"></div>
+    <div class="contador" id="horas"></div>
+    <div class="contador" id="minutos"></div>
+    <div class="contador" id="segundos"></div>
+    
+    <p>Minha querida Nathy, você é a mulher mais importante da minha vida. Cada segundo contigo possui um valor inestimável. Amo você completamente, minha noiva preciosa! (E feliz Dia da Mulher) 🌸</p>
+
+    <div>
+        <img src="" alt="">
+    </div>
+
+    <script>
+        function atualizarContador() {
+            const dataInicio = new Date("2020-03-08T00:00:00");
+            const agora = new Date();
+            const diferenca = agora - dataInicio;
+
+            const anos = Math.floor(diferenca / (1000 * 60 * 60 * 24 * 365.25));
+            const meses = Math.floor(anos * 12);
+            const semanas = Math.floor(diferenca / (1000 * 60 * 60 * 24 * 7));
+            const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+            const horas = Math.floor(diferenca / (1000 * 60 * 60));
+            const minutos = Math.floor(diferenca / (1000 * 60));
+            const segundos = Math.floor(diferenca / 1000);
+
+            document.getElementById("anos").innerHTML = `${anos} anos`;
+            document.getElementById("meses").innerHTML = ` ${meses} meses`;
+            document.getElementById("semanas").innerHTML = ` ${semanas} semanas`;
+            document.getElementById("dias").innerHTML = ` ${dias} dias`;
+            document.getElementById("horas").innerHTML = ` ${horas} horas`;
+            document.getElementById("minutos").innerHTML = `Cerca de ${minutos} minutos`;
+            document.getElementById("segundos").innerHTML = `E aproximadamente ${segundos} segundos.`;
+        }
+        
+        setInterval(atualizarContador, 1000);
+        atualizarContador();
+    </script>
+</body>
+</html>
